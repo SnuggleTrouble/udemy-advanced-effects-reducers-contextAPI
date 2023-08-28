@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const AuthContext = React.createContext({
   isLoggedIn: false,
+  // onLogout is a dummy function to help the IDE suggest it.
   onLogout: () => {},
   onLogin: (email, password) => {},
 });

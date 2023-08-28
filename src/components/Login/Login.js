@@ -53,6 +53,7 @@ const Login = (props) => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
+  // Here there is no data used.
   useEffect(() => {
     console.log("EFFECT RUNNING");
 
@@ -61,6 +62,14 @@ const Login = (props) => {
     };
   }, []);
 
+  // Object Destructuring. Assign an alias. This allows us to pass
+  // specific properties istead on the entire object.
+  // This is important, because in the case of a useEffect function,
+  // it will re-run whenever the referred to property changes.
+  // The same if it points at an object, it will re-run if any property
+  // of that object changes.
+  // You should therefore ALWAYS add everything you refer to inside of
+  // useEffet() as a dependency! Unless you have good reason not to.
   const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
